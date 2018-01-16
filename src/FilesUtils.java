@@ -2,13 +2,13 @@ import java.io.File;
 
 public class FilesUtils {
 
-    public String replaceFileNameByFolder(String folderName, String ReplaceFrom, String ReplaceWith) {
+    public String replaceFileNameByFolder(String folderName, String replaceFrom, String replaceWith) {
         try {
             File folder = new File(folderName);
             File[] filesList = folder.listFiles();
             if (filesList != null) {
                 for (File aFilesList : filesList) {
-                    String newName = (aFilesList.toString().replaceAll(ReplaceFrom, ReplaceWith));
+                    String newName = (aFilesList.toString().replaceAll(replaceFrom, replaceWith));
                     aFilesList.renameTo(new File(newName));
                 }
                 return "Successfully renamed " + filesList.length + " files.";
